@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="name">
+    <item>2020년 1학기 시간표</item>
+    <item>2020년 2학기 시간표</item>
+    <item>시간표 삭제</item>
+    <item>시간표 추가</item>
+</string-array>
+</resources>

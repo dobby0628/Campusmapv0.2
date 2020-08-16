@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".campusmap.CampusmapFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/campusmap_imagebutton_microphone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/campusmap_microphone"
+                android:background="#ffffff"/>
+
+            <EditText
+                android:id="@+id/campusmap_edittext_destination"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:textSize="30sp" />
+
+            <ImageButton
+                android:id="@+id/campusmap_imagebutton_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/campusmap_search"
+                android:background="#ffffff"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/campusmap_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9">
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/campusmap_change_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/link_edit"
+        android:backgroundTint="@color/lightgreen"/>
+
+</FrameLayout>
