@@ -1,5 +1,7 @@
 package shinhan.campusmap_v02.campusmap;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,17 +9,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import shinhan.campusmap_v02.CampusmapAddImgFragment;
 import shinhan.campusmap_v02.MainActivity;
 import shinhan.campusmap_v02.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CampusmapBuildingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CampusmapBuildingFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -27,6 +26,7 @@ public class CampusmapBuildingFragment extends Fragment {
     private String mParam2;
 
     private FloatingActionButton campusmap_route_btn;
+    private ImageButton campusmap_building_picaddBtn;
 
     public CampusmapBuildingFragment() {
         // Required empty public constructor
@@ -44,6 +44,8 @@ public class CampusmapBuildingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -56,12 +58,20 @@ public class CampusmapBuildingFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_campusmap_building, container, false);
 
         campusmap_route_btn = v.findViewById(R.id.campusmap_route_btn);
-
         campusmap_route_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 건물 이름 보내기
-                ((MainActivity)getActivity()).replaceCampusmapFragment(CampusmapRouteFragment.newInstance("a", "b"));
+                String url = "kakaomap://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=FOOT";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+
+        campusmap_building_picaddBtn = v.findViewById(R.id.campusmap_building_picaddBtn);
+        campusmap_building_picaddBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).replaceCampusmapFragment(CampusmapAddImgFragment.newInstance("a", "b"));
             }
         });
 

@@ -1,7 +1,6 @@
 package shinhan.campusmap_v02.campusmap;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,16 +11,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import shinhan.campusmap_v02.MainActivity;
 import shinhan.campusmap_v02.R;
-import shinhan.campusmap_v02.link.LinkTxtAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CampusmapListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CampusmapListFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -55,6 +49,7 @@ public class CampusmapListFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
+            Toast.makeText(getContext(), mParam1, Toast.LENGTH_SHORT).show();
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
